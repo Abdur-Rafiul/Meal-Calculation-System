@@ -18,7 +18,7 @@ function MealLSystem() {
     <Container>
       <h2>Meal Calculations</h2>
       <Tabs
-        defaultActiveKey="profile"
+        defaultActiveKey="home"
         id="uncontrolled-tab-example"
         className="mb-3"
       >
