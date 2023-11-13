@@ -1,5 +1,9 @@
 import  { useState, useEffect } from "react";
 import { Row, Button, Col, Container, Form, InputGroup } from "react-bootstrap";
+import $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-responsive';
+
 function Deposits() {
   const [selectedMonth, setSelectedMonth] = useState("");
   useEffect(() => {

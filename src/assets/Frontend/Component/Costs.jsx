@@ -1,5 +1,8 @@
 import  { useState, useEffect } from "react";
 import { Row, Button, Col, Container, Form, InputGroup } from "react-bootstrap";
+import $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-responsive';
 function Costs() {
   const [selectedMonth, setSelectedMonth] = useState("");
   useEffect(() => {
@@ -48,30 +51,22 @@ function Costs() {
             </Button>
           </Col>
         </Row>
-        <table id="costs" className="display nowrap">
+        <table id="costs" className="display nowrap w-100">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Total Meal</th>
-              <th>Meal Rate</th>
-              <th>Total Cost</th>
-              <th>Total Deposit</th>
-              <th>Manager Will Get</th>
-              <th>Manager Will Give</th>
-              <th>Note</th>
+              <th className="text-center">Total Cost</th>
+              <th className="text-center">Date</th>
+              <th className="text-center">Details</th>
+              <th className="text-center">Note</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Rafiul Islam</td>
-              <td>01701729512</td>
-              <td>12</td>
-              <td>12</td>
-              <td>2700</td>
-              <td>2000</td>
-              <td>00</td>
-              <td>20</td>
+              <td>100</td>
+              <td>30-12-1999</td>
+              <td>
+              <Button className="btn-dark">View</Button>
+              </td>
               <td>
                 <Button className="btn-info">Note</Button>
               </td>
