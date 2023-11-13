@@ -1,8 +1,9 @@
 import { Container } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Meal from "./Meal";
+import Costs from "./Costs";
+import Deposits from "./Deposits";
 
 const MealList = () => {
   return (
@@ -12,30 +13,56 @@ const MealList = () => {
   );
 };
 
-function MealLSystem() {
+const MealCosts = () => {
+  return (
+    <div>
+      <Costs />
+    </div>
+  );
+};
+const MealDeposits = () => {
+  return (
+    <div>
+      <Deposits />
+    </div>
+  );
+};
 
+function MealLSystem() {
   return (
     <Container>
       <h2>Meal Calculations</h2>
       <Tabs
-        defaultActiveKey="home"
+        defaultActiveKey="meal"
         id="uncontrolled-tab-example"
         className="mb-3"
       >
-        <Tab eventKey="home" title="Home">
-          <BrowserRouter>
-            <div className="pages">
-              <Switch>
-                <Route exact path="/" component={MealList} />
-              </Switch>
+        <Tab
+          eventKey="meal"
+          title={
+            <div style={{ color: "blue", fontWeight: "bold" }}>Meal List</div>
+          }
+        >
+          <MealList />
+        </Tab>
+
+        <Tab
+          eventKey="cost"
+          title={
+            <div style={{ color: "red", fontWeight: "bold" }}>Meal Costs</div>
+          }
+        >
+          <MealCosts />
+        </Tab>
+        <Tab
+          eventKey="deposits"
+          title={
+            <div style={{ color: "green", fontWeight: "bold" }}>
+              Meal Deposits
             </div>
-          </BrowserRouter>
-        </Tab>
-        <Tab eventKey="profile" title="Profile">
-          Tab content for Profile
-        </Tab>
-        <Tab eventKey="contact" title="Contact">
-          Tab content for Contact
+          }
+        >
+          <MealDeposits />
         </Tab>
       </Tabs>
     </Container>

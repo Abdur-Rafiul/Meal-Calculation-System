@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import { Row, Button, Col, Container, Form, InputGroup } from "react-bootstrap";
-function Meal() {
+function Costs() {
   const [selectedMonth, setSelectedMonth] = useState("");
   useEffect(() => {
     const currentDate = new Date();
@@ -10,7 +10,7 @@ function Meal() {
       .toString()
       .padStart(2, "0")}`;
     setSelectedMonth(currentMonth);
-    const table = $("#meal").DataTable({
+    const table = $("#costs").DataTable({
       fixedHeader: true,
       responsive: true,
     });
@@ -48,7 +48,7 @@ function Meal() {
             </Button>
           </Col>
         </Row>
-        <table id="meal" className="display nowrap">
+        <table id="costs" className="display nowrap">
           <thead>
             <tr>
               <th>Name</th>
@@ -82,4 +82,5 @@ function Meal() {
     </div>
   );
 }
-export default Meal;
+
+export default Costs;
